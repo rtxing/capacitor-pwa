@@ -1,7 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 import { IonicModule } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
@@ -10,6 +9,7 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   imports: [
@@ -24,7 +24,7 @@ import { FormsModule } from '@angular/forms';
     })
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

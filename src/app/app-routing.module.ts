@@ -32,6 +32,18 @@ const routes: Routes = [
     path: 'tutorial',
     loadChildren: () => import('./pages/tutorial/tutorial.module').then(m => m.TutorialModule),
     canMatch: [checkTutorialGuard]
+  },
+  {
+    path: 'carshopdetails/:csid',
+    loadChildren: () => import('./pages/carshopdetails/carshopdetails.module').then( m => m.CarshopdetailsPageModule)
+  },
+  {
+    path: 'bookingconf',
+    loadChildren: () => import('./pages/bookingconf/bookingconf.module').then( m => m.BookingconfPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
   }
 ];
 

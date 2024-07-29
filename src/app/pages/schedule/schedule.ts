@@ -5,6 +5,11 @@ import { AlertController, IonList, IonRouterOutlet, LoadingController, ModalCont
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { NavController } from '@ionic/angular';
+// import { CarshopdetailsPage } from '../carshopdetails/carshopdetails';
+
 
 @Component({
   selector: 'page-schedule',
@@ -14,6 +19,8 @@ import { UserData } from '../../providers/user-data';
 export class SchedulePage implements OnInit {
   // Gets a reference to the list element
   @ViewChild('scheduleList', { static: true }) scheduleList: IonList;
+  
+  carshops: Observable<any>;
 
   ios: boolean;
   dayIndex = 0;
@@ -26,22 +33,39 @@ export class SchedulePage implements OnInit {
   showSearchbar: boolean;
 
   constructor(
+    private router: Router, private http: HttpClient,
     public alertCtrl: AlertController,
     public confData: ConferenceData,
     public loadingCtrl: LoadingController,
     public modalCtrl: ModalController,
-    public router: Router,
     public routerOutlet: IonRouterOutlet,
     public toastCtrl: ToastController,
     public user: UserData,
-    public config: Config
+    public config: Config,
+    public nav: NavController
   ) { }
 
   ngOnInit() {
-    this.updateSchedule();
+    //this.updateSchedule();
 
-    this.ios = this.config.get('mode') === 'ios';
+    // this.ios = this.config.get('mode') === 'ios';
+
+    this.carshops = this.http.get('http://127.0.0.1:8000/api/carshops/?format=json');
+    this.carshops.subscribe(data => {
+      console.log('my data: ', data);
+    });
   }
+
+  private openDetails(_event, carshop) {
+    // let carshop_id = carshop.id;
+    console.log('my carshop data: ', carshop);
+
+    
+
+
+     this.nav.navigateForward('/carshopdetails/' + carshop.id);
+  }
+
 
   updateSchedule() {
     // Close any open sliding items when the schedule updates

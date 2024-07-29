@@ -20,6 +20,14 @@ const config: CapacitorConfig = {
       splashImmersive: true,
     },
   },
+  server: {
+    url: 'http://127.0.0.1:8000',        
+    allowNavigation:[
+      '127.0.0.1:8000',
+      '*.your-domain.com/*',
+      'localhost:8100/*'
+    ]
+  }
 };
 
 export default config;
