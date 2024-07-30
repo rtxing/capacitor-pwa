@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar class="toolbar-color">
      <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -9,22 +9,30 @@
  
 <ion-content>
   <ion-list>
+
     <ion-item  button detail lines="inset" *ngFor="let carshop of (carshops | async)?.results" let i = index (click)="openDetails($event, carshop)" id = {{carshop.id}>
     
 <br>
+  <img style="height: 100px;width: 100px;border-radius: 10px;margin: 3%" src = "{{ carshop.upload_carshop_image }}" />
+   
+
 <ion-text class="item item-text-wrap">   <b>  <br> {{ carshop.shop_name }} </b> <br> <br>
+<br>
+  
 
-
-
-     2.1 Kms Away   <br>  <br>
+<br>
+     2.1 Kms Away  &nbsp;&nbsp;&nbsp;  {{ carshop.address }} 
      
- <ion-icon name="star"> 
+     &nbsp;&nbsp;&nbsp;
+
+ <ion-icon style="color: green;" name="star"> 
 
 
  </ion-icon> 4.5 
 
 
  </ion-text>
+ <br>
 
 
     </ion-item>

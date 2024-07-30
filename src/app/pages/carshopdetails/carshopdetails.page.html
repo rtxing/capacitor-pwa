@@ -10,9 +10,17 @@
 <ion-content>
 <h3 id = "tmdl"> <u>Enter Car Wash Details </u></h3>
  <ion-list>
-        <ion-item *ngFor="let site of sites;"> &nbsp; {{site.shop_name}}</ion-item>
+        <ion-item *ngFor="let site of sites;"> 
+
+ <img style="height: 100px;width: 100px;border-radius: 10px;margin: 3%" src = "{{ site.upload_carshop_image }}" />
+
+ &nbsp; <b> {{site.shop_name}} </b>
+
+        </ion-item>
+
     </ion-list>
-<br>
+
+
      &nbsp;&nbsp;&nbsp; Distance : 2.1 Kms Away   <br>  <br>
      
  &nbsp;&nbsp;&nbsp; Rating &nbsp;&nbsp; <ion-icon name="star"> 
@@ -21,7 +29,7 @@
  </ion-icon> &nbsp; 4.5 
 
 
-
+<div class = "bookform">
  <form  #f="ngForm" (submit)="sendPostRequest(f)">
     <ion-grid>
       <ion-row color="primary" justify-content-center>
@@ -102,13 +110,13 @@
 
           </div>
           <div padding>
-            <ion-button  size="medium" type="submit" expand="block">Submit</ion-button>
+            <ion-button style="--background: #fe5200 ;" class = "cssubmit" size="medium" type="submit" expand="block">Submit</ion-button>
           </div>
         </ion-col>
       </ion-row>
     </ion-grid>
   </form>
-
+</div>
 
 
 </ion-content>

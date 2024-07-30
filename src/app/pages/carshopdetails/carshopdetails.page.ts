@@ -15,6 +15,7 @@ export class CarshopdetailsPage implements OnInit {
   
    carshop: any;
    sites : any = [];
+   site: any;
     dateExample = new Date().toISOString();
     name : any;
     driver : any;
@@ -37,10 +38,10 @@ export class CarshopdetailsPage implements OnInit {
 
     let csid = this.route.snapshot.paramMap.get('csid');
     
-    let url = 'http://127.0.0.1:8000/api/carshops/' + csid + '/?format=json';
+    let url = 'https://www.dsctech.in/api/carshops/' + csid + '/?format=json';
     this.carshop = this.http.get(url);
      this.carshop.subscribe(data => {
-      console.log('cs data: ', data);
+      console.log('csee data: ', data);
       this.sites = [data];
     });
 
@@ -65,7 +66,7 @@ console.log(this.dateExample);
            
     }
 
-    this.http.post("http://127.0.0.1:8000/api/booking/", postData, httpOptions)
+    this.http.post("https://www.dsctech.in/api/booking/", postData, httpOptions)
       .subscribe(data => {
         console.log(data);
        }, error => {

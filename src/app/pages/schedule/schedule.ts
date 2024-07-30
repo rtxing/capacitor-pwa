@@ -21,7 +21,7 @@ export class SchedulePage implements OnInit {
   @ViewChild('scheduleList', { static: true }) scheduleList: IonList;
   
   carshops: Observable<any>;
-
+  carshop :any;
   ios: boolean;
   dayIndex = 0;
   queryText = '';
@@ -50,7 +50,7 @@ export class SchedulePage implements OnInit {
 
     // this.ios = this.config.get('mode') === 'ios';
 
-    this.carshops = this.http.get('http://127.0.0.1:8000/api/carshops/?format=json');
+    this.carshops = this.http.get('https://www.dsctech.in/api/carshops/?format=json');
     this.carshops.subscribe(data => {
       console.log('my data: ', data);
     });
