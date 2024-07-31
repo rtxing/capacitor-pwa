@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'ionic.conference.app',
-  appName: 'ionic-conference-app',
+  appId: 'hubio.co.app',
+  appName: 'hubio',
   webDir: 'www',
   bundledWebRuntime: false,
   plugins: {
@@ -19,14 +19,6 @@ const config: CapacitorConfig = {
       splashFullScreen: true,
       splashImmersive: true,
     },
-  },
-  server: {
-    url: 'http://127.0.0.1:8000',        
-    allowNavigation:[
-      '127.0.0.1:8000',
-      '*.your-domain.com/*',
-      'localhost:8100/*'
-    ]
   }
 };
 

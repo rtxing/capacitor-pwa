@@ -1,7 +1,7 @@
 {
-  "name": "ionic-conference-app",
+  "name": "Hubio",
   "version": "0.0.0",
-  "description": "Ionic Conference App",
+  "description": "Hubio",
   "author": "Ionic Team <hi@ionicframework.com>",
   "license": "Apache-2.0",
   "scripts": {
@@ -33,6 +33,7 @@
     "@awesome-cordova-plugins/in-app-browser": "6.3.0",
     "@capacitor/android": "4.6.3",
     "@capacitor/app": "4.1.1",
+    "@capacitor/assets": "^3.0.5",
     "@capacitor/core": "4.6.3",
     "@capacitor/device": "4.1.0",
     "@capacitor/haptics": "4.1.0",
